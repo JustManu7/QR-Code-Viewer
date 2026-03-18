@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Treppenhaus QR-Code Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <section class="panel">
+      <h1>Treppenhaus QR-Code Viewer</h1>
+      <p class="intro">
+        Wähle Gebäude, Treppenhaus und Stockwerk aus. Der passende QR-Code wird direkt aus der JSON-Datei geladen.
+      </p>
+
+      <div class="field">
+        <label for="buildingSelect">Gebäude</label>
+        <select id="buildingSelect"></select>
+      </div>
+
+      <div class="field">
+        <label for="staircaseSelect">Treppenhaus</label>
+        <select id="staircaseSelect"></select>
+      </div>
+
+      <div class="field">
+        <label for="floorSelect">Stockwerk</label>
+        <select id="floorSelect"></select>
+      </div>
+
+      <div class="info-box">
+        <div><strong>Gebäude:</strong> <span id="infoBuilding">-</span></div>
+        <div><strong>Treppenhaus:</strong> <span id="infoStaircase">-</span></div>
+        <div><strong>Stockwerk:</strong> <span id="infoFloor">-</span></div>
+        <div><strong>QR-Inhalt:</strong> <span id="infoQr">-</span></div>
+      </div>
+    </section>
+
+    <section class="panel qr-panel">
+      <h2>QR-Code</h2>
+      <div class="qr-card">
+        <div id="qrcode"></div>
+        <div class="qr-meta">
+          <div id="qrTitle" class="qr-title">-</div>
+          <div id="qrSubtitle" class="qr-subtitle">-</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

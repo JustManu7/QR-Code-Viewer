@@ -1,0 +1,78 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.panel {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+h1, h2 { margin-top: 0; }
+.intro {
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.field { margin-bottom: 16px; }
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  font-size: 16px;
+}
+.info-box {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #eef2ff;
+  line-height: 1.7;
+  word-break: break-word;
+}
+.qr-panel { display: flex; flex-direction: column; }
+.qr-card {
+  min-height: 420px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+#qrcode {
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+.qr-meta { text-align: center; }
+.qr-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.qr-subtitle { color: #4b5563; }
+@media (max-width: 640px) {
+  .container { padding: 16px; }
+  .panel { padding: 18px; }
+}

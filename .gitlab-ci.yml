@@ -1,0 +1,11 @@
+pages:
+  script:
+    - mkdir public
+    - cp index.html public/
+    - cp style.css public/
+    - cp app.js public/
+    - cp treppenhaeuser_mit_qr.json public/
+  artifacts:
+    paths:
+      - public
+  pages: true
