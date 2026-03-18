@@ -26,9 +26,8 @@ function getSelectedStaircase() {
   return building.staircases.find(s => s.name === staircaseSelect.value);
 }
 
-function getSelectedFloorEntry() {
-  const staircase = getSelectedStaircase();
-  return staircase.floors.find(f => String(f.floor) === floorSelect.value);
+function getSelectedFloor() {
+  return parseInt(floorSelect.value);
 }
 
 function populateBuildings() {
@@ -55,10 +54,10 @@ function populateStaircases() {
 function populateFloors() {
   const staircase = getSelectedStaircase();
   floorSelect.innerHTML = "";
-  staircase.floors.forEach(entry => {
+  staircase.floors.forEach(floor => {
     const option = document.createElement("option");
-    option.value = String(entry.floor);
-    option.textContent = formatFloor(entry.floor);
+    option.value = String(floor);
+    option.textContent = formatFloor(floor);
     floorSelect.appendChild(option);
   });
 }
@@ -66,19 +65,21 @@ function populateFloors() {
 function renderQrCode() {
   const building = getSelectedBuilding();
   const staircase = getSelectedStaircase();
-  const floorEntry = getSelectedFloorEntry();
+  const floor = getSelectedFloor();
+
+  const qrText = `${building.id}_${staircase.id}_${floor}`;
 
   infoBuilding.textContent = building.name;
   infoStaircase.textContent = staircase.name;
-  infoFloor.textContent = formatFloor(floorEntry.floor);
-  infoQr.textContent = floorEntry.qrCode;
+  infoFloor.textContent = formatFloor(floor);
+  infoQr.textContent = qrText;
 
   qrTitle.textContent = building.name;
-  qrSubtitle.textContent = `${staircase.name} · Stockwerk ${formatFloor(floorEntry.floor)}`;
+  qrSubtitle.textContent = `${staircase.name} · Stockwerk ${formatFloor(floor)}`;
 
   qrContainer.innerHTML = "";
   new QRCode(qrContainer, {
-    text: floorEntry.qrCode,
+    text: qrText,
     width: 260,
     height: 260
   });
@@ -97,7 +98,7 @@ staircaseSelect.addEventListener("change", () => {
 
 floorSelect.addEventListener("change", renderQrCode);
 
-fetch("treppenhaeuser_mit_qr.json")
+fetch("treppenhaeuser.json")
   .then(response => {
     if (!response.ok) throw new Error("JSON-Datei konnte nicht geladen werden.");
     return response.json();
