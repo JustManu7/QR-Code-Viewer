@@ -9,33 +9,145 @@ const infoStaircase = document.getElementById("infoStaircase");
 const infoFloor = document.getElementById("infoFloor");
 const infoQr = document.getElementById("infoQr");
 
+const infoCampus = document.getElementById("infoCampus");
 const qrTitle = document.getElementById("qrTitle");
 const qrSubtitle = document.getElementById("qrSubtitle");
 const qrContainer = document.getElementById("qrcode");
 
+let preparedBuildings = [];
+
+function getAllBuildings() {
+  if (!schoolData?.campuses) return [];
+
+  return schoolData.campuses.flatMap(campus =>
+    (campus.buildings || []).map(building => ({
+      ...building,
+      campus
+    }))
+  );
+}
+
+function buildFloorMap(building) {
+  const map = new Map();
+  (building.floors || []).forEach(floor => {
+    map.set(floor.id, floor);
+  });
+  return map;
+}
+
+function extractStaircaseIdentifier(segment, floorMap) {
+  const fromFloor = floorMap.get(segment.from_floor_id);
+  const toFloor = floorMap.get(segment.to_floor_id);
+
+  if (!fromFloor || !toFloor) {
+    return segment.segmentIdentifier || segment.displayName || "UNBEKANNT";
+  }
+
+  const suffix = `_${fromFloor.floorIdentifier}_${toFloor.floorIdentifier}`;
+
+  if (segment.segmentIdentifier && segment.segmentIdentifier.endsWith(suffix)) {
+    return segment.segmentIdentifier.slice(0, -suffix.length);
+  }
+
+  return segment.segmentIdentifier || segment.displayName || "UNBEKANNT";
+}
+
+function extractStaircaseDisplayName(segment) {
+  if (!segment.displayName) return segment.segmentIdentifier || "Unbekannt";
+
+  const match = segment.displayName.match(/^(.*)\s+(UG\d+|EG|OG\d+)\s*->\s*(UG\d+|EG|OG\d+)$/);
+  if (match) {
+    return match[1].trim();
+  }
+
+  return segment.displayName;
+}
+
+function getPreparedStaircases(building) {
+  const floorMap = buildFloorMap(building);
+  const staircaseMap = new Map();
+
+  (building.stair_segments || []).forEach(segment => {
+    const staircaseIdentifier = extractStaircaseIdentifier(segment, floorMap);
+    const staircaseDisplayName = extractStaircaseDisplayName(segment);
+
+    if (!staircaseMap.has(staircaseIdentifier)) {
+      staircaseMap.set(staircaseIdentifier, {
+        identifier: staircaseIdentifier,
+        name: staircaseDisplayName,
+        floorsMap: new Map()
+      });
+    }
+
+    const staircase = staircaseMap.get(staircaseIdentifier);
+
+    const fromFloor = floorMap.get(segment.from_floor_id);
+    const toFloor = floorMap.get(segment.to_floor_id);
+
+    if (fromFloor) staircase.floorsMap.set(fromFloor.id, fromFloor);
+    if (toFloor) staircase.floorsMap.set(toFloor.id, toFloor);
+  });
+
+  return Array.from(staircaseMap.values())
+    .map(staircase => ({
+      identifier: staircase.identifier,
+      name: staircase.name,
+      floors: Array.from(staircase.floorsMap.values()).sort(
+        (a, b) => a.floor_number - b.floor_number
+      )
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name, "de"));
+}
+
+function prepareBuildings() {
+  preparedBuildings = getAllBuildings()
+    .map(building => ({
+      ...building,
+      staircases: getPreparedStaircases(building)
+    }))
+    .filter(building => building.staircases.length > 0)
+    .sort((a, b) => {
+      const campusCompare = a.campus.displayName.localeCompare(b.campus.displayName, "de");
+      if (campusCompare !== 0) return campusCompare;
+      return a.displayName.localeCompare(b.displayName, "de");
+    });
+}
+
 function formatFloor(floor) {
-  return String(floor);
+  return floor?.displayName ?? "-";
 }
 
 function getSelectedBuilding() {
-  return schoolData.buildings.find(b => b.name === buildingSelect.value);
+  return preparedBuildings.find(
+    building => building.id === buildingSelect.value
+  );
 }
 
 function getSelectedStaircase() {
   const building = getSelectedBuilding();
-  return building.staircases.find(s => s.name === staircaseSelect.value);
+  if (!building) return null;
+
+  return building.staircases.find(
+    staircase => staircase.identifier === staircaseSelect.value
+  );
 }
 
 function getSelectedFloor() {
-  return parseInt(floorSelect.value);
+  const staircase = getSelectedStaircase();
+  if (!staircase) return null;
+
+  return staircase.floors.find(
+    floor => floor.id === floorSelect.value
+  );
 }
 
 function populateBuildings() {
   buildingSelect.innerHTML = "";
-  schoolData.buildings.forEach(building => {
+
+  preparedBuildings.forEach(building => {
     const option = document.createElement("option");
-    option.value = building.name;
-    option.textContent = building.name;
+    option.value = building.id;
+    option.textContent = `${building.campus.displayName} · ${building.displayName}`;
     buildingSelect.appendChild(option);
   });
 }
@@ -43,9 +155,12 @@ function populateBuildings() {
 function populateStaircases() {
   const building = getSelectedBuilding();
   staircaseSelect.innerHTML = "";
+
+  if (!building) return;
+
   building.staircases.forEach(staircase => {
     const option = document.createElement("option");
-    option.value = staircase.name;
+    option.value = staircase.identifier;
     option.textContent = staircase.name;
     staircaseSelect.appendChild(option);
   });
@@ -54,9 +169,12 @@ function populateStaircases() {
 function populateFloors() {
   const staircase = getSelectedStaircase();
   floorSelect.innerHTML = "";
+
+  if (!staircase) return;
+
   staircase.floors.forEach(floor => {
     const option = document.createElement("option");
-    option.value = String(floor);
+    option.value = floor.id;
     option.textContent = formatFloor(floor);
     floorSelect.appendChild(option);
   });
@@ -67,14 +185,19 @@ function renderQrCode() {
   const staircase = getSelectedStaircase();
   const floor = getSelectedFloor();
 
-  const qrText = `${building.id}_${staircase.id}_${floor}`;
+  if (!building || !staircase || !floor) return;
 
-  infoBuilding.textContent = building.name;
+  const campus = building.campus;
+
+  const qrText = `${campus.campusIdentifier}_${building.buildingIdentifier}_${staircase.identifier}_${floor.floorIdentifier}`;
+
+  infoCampus.textContent = campus.displayName;
+  infoBuilding.textContent = building.displayName;
   infoStaircase.textContent = staircase.name;
   infoFloor.textContent = formatFloor(floor);
   infoQr.textContent = qrText;
 
-  qrTitle.textContent = building.name;
+  qrTitle.textContent = `${campus.displayName} · ${building.displayName}`;
   qrSubtitle.textContent = `${staircase.name} · Stockwerk ${formatFloor(floor)}`;
 
   qrContainer.innerHTML = "";
@@ -98,13 +221,14 @@ staircaseSelect.addEventListener("change", () => {
 
 floorSelect.addEventListener("change", renderQrCode);
 
-fetch("treppenhaeuser.json")
+fetch("buildings_5.json")
   .then(response => {
     if (!response.ok) throw new Error("JSON-Datei konnte nicht geladen werden.");
     return response.json();
   })
   .then(data => {
     schoolData = data;
+    prepareBuildings();
     populateBuildings();
     populateStaircases();
     populateFloors();

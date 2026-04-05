@@ -1,0 +1,627 @@
+{
+  "campuses": [
+    {
+      "id": "TODO-CAMPUS-UUID",
+      "displayName": "Suurstoffi",
+      "campusIdentifier": "SUURSTOFFI",
+      "buildings": [
+        {
+          "id": "TODO-BUILDING-UUID-S1B",
+          "campus_id": "TODO-CAMPUS-UUID",
+          "displayName": "S1B",
+          "buildingIdentifier": "S1B",
+          "floors": [
+            {
+              "id": "TODO-FLOOR-UUID-S1B-UG3",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": -3,
+              "displayName": "UG3",
+              "floorIdentifier": "UG3"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-UG2",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": -2,
+              "displayName": "UG2",
+              "floorIdentifier": "UG2"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-UG1",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": -1,
+              "displayName": "UG1",
+              "floorIdentifier": "UG1"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-EG",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 0,
+              "displayName": "EG",
+              "floorIdentifier": "EG"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG1",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 1,
+              "displayName": "OG1",
+              "floorIdentifier": "OG1"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG2",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 2,
+              "displayName": "OG2",
+              "floorIdentifier": "OG2"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG3",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 3,
+              "displayName": "OG3",
+              "floorIdentifier": "OG3"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG4",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 4,
+              "displayName": "OG4",
+              "floorIdentifier": "OG4"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG5",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 5,
+              "displayName": "OG5",
+              "floorIdentifier": "OG5"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG6",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 6,
+              "displayName": "OG6",
+              "floorIdentifier": "OG6"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG7",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 7,
+              "displayName": "OG7",
+              "floorIdentifier": "OG7"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG8",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 8,
+              "displayName": "OG8",
+              "floorIdentifier": "OG8"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG9",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 9,
+              "displayName": "OG9",
+              "floorIdentifier": "OG9"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG10",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 10,
+              "displayName": "OG10",
+              "floorIdentifier": "OG10"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG11",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 11,
+              "displayName": "OG11",
+              "floorIdentifier": "OG11"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG12",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 12,
+              "displayName": "OG12",
+              "floorIdentifier": "OG12"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG13",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 13,
+              "displayName": "OG13",
+              "floorIdentifier": "OG13"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1B-OG14",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "floor_number": 14,
+              "displayName": "OG14",
+              "floorIdentifier": "OG14"
+            }
+          ],
+          "stair_segments": [
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_UG3_UG2",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-UG3",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-UG2",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus UG3 -> UG2",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_UG3_UG2"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_UG2_UG1",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-UG2",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-UG1",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus UG2 -> UG1",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_UG2_UG1"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_UG1_EG",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-UG1",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-EG",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus UG1 -> EG",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_UG1_EG"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_EG_OG1",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-EG",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG1",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus EG -> OG1",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_EG_OG1"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG1_OG2",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG1",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG2",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG1 -> OG2",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG1_OG2"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG2_OG3",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG2",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG3",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG2 -> OG3",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG2_OG3"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG3_OG4",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG3",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG4",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG3 -> OG4",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG3_OG4"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG4_OG5",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG4",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG5",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG4 -> OG5",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG4_OG5"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG5_OG6",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG5",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG6",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG5 -> OG6",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG5_OG6"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG6_OG7",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG6",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG7",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG6 -> OG7",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG6_OG7"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG7_OG8",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG7",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG8",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG7 -> OG8",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG7_OG8"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG8_OG9",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG8",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG9",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG8 -> OG9",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG8_OG9"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG9_OG10",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG9",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG10",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG9 -> OG10",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG9_OG10"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG10_OG11",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG10",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG11",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG10 -> OG11",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG10_OG11"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG11_OG12",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG11",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG12",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG11 -> OG12",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG11_OG12"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG12_OG13",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG12",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG13",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG12 -> OG13",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG12_OG13"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-HAUPTTREPPENHAUS_OG13_OG14",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG13",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG14",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Haupttreppenhaus OG13 -> OG14",
+              "segmentIdentifier": "HAUPTTREPPENHAUS_OG13_OG14"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-WENDELTREPPEMENSA_EG_OG1",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-EG",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG1",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Wendeltreppe Mensa EG -> OG1",
+              "segmentIdentifier": "WENDELTREPPEMENSA_EG_OG1"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-WENDELTREPPEMENSA_OG1_OG2",
+              "building_id": "TODO-BUILDING-UUID-S1B",
+              "from_floor_id": "TODO-FLOOR-UUID-S1B-OG1",
+              "to_floor_id": "TODO-FLOOR-UUID-S1B-OG2",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Wendeltreppe Mensa OG1 -> OG2",
+              "segmentIdentifier": "WENDELTREPPEMENSA_OG1_OG2"
+            }
+          ]
+        },
+        {
+          "id": "TODO-BUILDING-UUID-S1A",
+          "campus_id": "TODO-CAMPUS-UUID",
+          "displayName": "S1A",
+          "buildingIdentifier": "S1A",
+          "floors": [
+            {
+              "id": "TODO-FLOOR-UUID-S1A-UG3",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "floor_number": -3,
+              "displayName": "UG3",
+              "floorIdentifier": "UG3"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1A-UG2",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "floor_number": -2,
+              "displayName": "UG2",
+              "floorIdentifier": "UG2"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1A-UG1",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "floor_number": -1,
+              "displayName": "UG1",
+              "floorIdentifier": "UG1"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1A-EG",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "floor_number": 0,
+              "displayName": "EG",
+              "floorIdentifier": "EG"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1A-OG1",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "floor_number": 1,
+              "displayName": "OG1",
+              "floorIdentifier": "OG1"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1A-OG2",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "floor_number": 2,
+              "displayName": "OG2",
+              "floorIdentifier": "OG2"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1A-OG3",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "floor_number": 3,
+              "displayName": "OG3",
+              "floorIdentifier": "OG3"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1A-OG4",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "floor_number": 4,
+              "displayName": "OG4",
+              "floorIdentifier": "OG4"
+            },
+            {
+              "id": "TODO-FLOOR-UUID-S1A-OG5",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "floor_number": 5,
+              "displayName": "OG5",
+              "floorIdentifier": "OG5"
+            }
+          ],
+          "stair_segments": [
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS1_UG3_UG2",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-UG3",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-UG2",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 1 UG3 -> UG2",
+              "segmentIdentifier": "TREPPENHAUS1_UG3_UG2"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS1_UG2_UG1",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-UG2",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-UG1",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 1 UG2 -> UG1",
+              "segmentIdentifier": "TREPPENHAUS1_UG2_UG1"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS1_UG1_EG",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-UG1",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-EG",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 1 UG1 -> EG",
+              "segmentIdentifier": "TREPPENHAUS1_UG1_EG"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS1_EG_OG1",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-EG",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG1",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 1 EG -> OG1",
+              "segmentIdentifier": "TREPPENHAUS1_EG_OG1"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS1_OG1_OG2",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-OG1",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG2",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 1 OG1 -> OG2",
+              "segmentIdentifier": "TREPPENHAUS1_OG1_OG2"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS1_OG2_OG3",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-OG2",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG3",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 1 OG2 -> OG3",
+              "segmentIdentifier": "TREPPENHAUS1_OG2_OG3"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS1_OG3_OG4",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-OG3",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG4",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 1 OG3 -> OG4",
+              "segmentIdentifier": "TREPPENHAUS1_OG3_OG4"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS1_OG4_OG5",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-OG4",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG5",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 1 OG4 -> OG5",
+              "segmentIdentifier": "TREPPENHAUS1_OG4_OG5"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS2_UG3_UG2",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-UG3",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-UG2",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 2 UG3 -> UG2",
+              "segmentIdentifier": "TREPPENHAUS2_UG3_UG2"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS2_UG2_UG1",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-UG2",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-UG1",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 2 UG2 -> UG1",
+              "segmentIdentifier": "TREPPENHAUS2_UG2_UG1"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS2_UG1_EG",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-UG1",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-EG",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 2 UG1 -> EG",
+              "segmentIdentifier": "TREPPENHAUS2_UG1_EG"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS2_EG_OG1",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-EG",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG1",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 2 EG -> OG1",
+              "segmentIdentifier": "TREPPENHAUS2_EG_OG1"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS2_OG1_OG2",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-OG1",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG2",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 2 OG1 -> OG2",
+              "segmentIdentifier": "TREPPENHAUS2_OG1_OG2"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS2_OG2_OG3",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-OG2",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG3",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 2 OG2 -> OG3",
+              "segmentIdentifier": "TREPPENHAUS2_OG2_OG3"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS2_OG3_OG4",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-OG3",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG4",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 2 OG3 -> OG4",
+              "segmentIdentifier": "TREPPENHAUS2_OG3_OG4"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-TREPPENHAUS2_OG4_OG5",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-OG4",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG5",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Treppenhaus 2 OG4 -> OG5",
+              "segmentIdentifier": "TREPPENHAUS2_OG4_OG5"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-WENDELTREPPE_EG_OG1",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-EG",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG1",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Wendeltreppe EG -> OG1",
+              "segmentIdentifier": "WENDELTREPPE_EG_OG1"
+            },
+            {
+              "id": "TODO-STAIR-SEGMENT-UUID-WENDELTREPPE_OG1_OG2",
+              "building_id": "TODO-BUILDING-UUID-S1A",
+              "from_floor_id": "TODO-FLOOR-UUID-S1A-OG1",
+              "to_floor_id": "TODO-FLOOR-UUID-S1A-OG2",
+              "step_count": null,
+              "step_height": null,
+              "stairSegmentHeight": null,
+              "displayName": "Wendeltreppe OG1 -> OG2",
+              "segmentIdentifier": "WENDELTREPPE_OG1_OG2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
