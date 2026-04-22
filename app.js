@@ -213,49 +213,83 @@ function renderQrCode() {
   });
 
   const logo = new Image();
-  logo.src = "./liftignore.png";
+  logo.src = "./HSLU.jpg";
 
   logo.onload = () => {
-    const qrCanvas = tempQr.querySelector("canvas");
-    if (!qrCanvas) {
-      tempQr.remove();
-      return;
-    }
-
-    const finalCanvas = document.createElement("canvas");
-    const size = 320;
-    finalCanvas.width = size;
-    finalCanvas.height = size;
-
-    const ctx = finalCanvas.getContext("2d");
-    ctx.clearRect(0, 0, size, size);
-    ctx.drawImage(qrCanvas, 0, 0, size, size);
-
-    const logoSize = 110;
-    const x = (size - logoSize) / 2;
-    const y = (size - logoSize) / 2;
-
-    ctx.drawImage(logo, x, y, logoSize, logoSize);
-
-    const pngUrl = finalCanvas.toDataURL("image/png");
-
-    const resultImg = document.createElement("img");
-    resultImg.src = pngUrl;
-    resultImg.alt = "QR-Code mit Logo";
-    resultImg.className = "qr-result-image";
-    resultImg.draggable = true;
-
-    const downloadLink = document.createElement("a");
-    downloadLink.href = pngUrl;
-    downloadLink.download = `${qrText}.png`;
-    downloadLink.appendChild(resultImg);
-
-    qrContainer.innerHTML = "";
-    qrContainer.appendChild(downloadLink);
-
+  const qrCanvas = tempQr.querySelector("canvas");
+  if (!qrCanvas) {
     tempQr.remove();
-  };
+    return;
+  }
 
+  // Höhere interne Auflösung für bessere Qualität
+  const exportSize = 1200;
+  const displaySize = 320;
+  const scale = exportSize / displaySize;
+
+  const finalCanvas = document.createElement("canvas");
+  finalCanvas.width = exportSize;
+  finalCanvas.height = exportSize;
+
+  const ctx = finalCanvas.getContext("2d");
+  ctx.clearRect(0, 0, exportSize, exportSize);
+
+  // QR-Code groß aufziehen
+  ctx.drawImage(qrCanvas, 0, 0, exportSize, exportSize);
+
+  // Optional: Bildglättung für Logo aktivieren
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
+
+  // Logo proportional skalieren
+  const maxLogoSize = 150 * scale;
+  const aspectRatio = logo.width / logo.height;
+
+  let drawWidth, drawHeight;
+
+  if (aspectRatio > 1) {
+    drawWidth = maxLogoSize;
+    drawHeight = maxLogoSize / aspectRatio;
+  } else {
+    drawHeight = maxLogoSize;
+    drawWidth = maxLogoSize * aspectRatio;
+  }
+
+  // Logo zentrieren
+  const x = (exportSize - drawWidth) / 2;
+  const y = (exportSize - drawHeight) / 2;
+
+  // Weißer Hintergrund unter dem Logo für bessere Lesbarkeit + saubere Kanten
+  const padding = 18 * scale;
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(
+    x - padding / 2,
+    y - padding / 2,
+    drawWidth + padding,
+    drawHeight + padding
+  );
+
+  // Logo zeichnen
+  ctx.drawImage(logo, x, y, drawWidth, drawHeight);
+
+  const pngUrl = finalCanvas.toDataURL("image/png");
+
+  const resultImg = document.createElement("img");
+  resultImg.src = pngUrl;
+  resultImg.alt = "QR-Code mit Logo";
+  resultImg.className = "qr-result-image";
+  resultImg.draggable = true;
+
+  const downloadLink = document.createElement("a");
+  downloadLink.href = pngUrl;
+  downloadLink.download = `${qrText}.png`;
+  downloadLink.appendChild(resultImg);
+
+  qrContainer.innerHTML = "";
+  qrContainer.appendChild(downloadLink);
+
+  tempQr.remove();
+};
   logo.onerror = () => {
     qrContainer.innerHTML = "<p>Logo konnte nicht geladen werden.</p>";
     tempQr.remove();
