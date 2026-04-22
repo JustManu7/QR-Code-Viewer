@@ -188,7 +188,6 @@ function renderQrCode() {
   if (!building || !staircase || !floor) return;
 
   const campus = building.campus;
-
   const qrText = `${campus.campusIdentifier}_${building.buildingIdentifier}_${staircase.identifier}_${floor.floorIdentifier}`;
 
   infoCampus.textContent = campus.displayName;
@@ -201,20 +200,70 @@ function renderQrCode() {
   qrSubtitle.textContent = `${staircase.name} · Stockwerk ${formatFloor(floor)}`;
 
   qrContainer.innerHTML = "";
-  new QRCode(qrContainer, {
+
+  const tempQr = document.createElement("div");
+  tempQr.style.display = "none";
+  document.body.appendChild(tempQr);
+
+  new QRCode(tempQr, {
     text: qrText,
-    width: 260,
-    height: 260
+    width: 320,
+    height: 320,
+    correctLevel: QRCode.CorrectLevel.H
   });
+
+  const logo = new Image();
+  logo.src = "./liftignore.png";
+
+  logo.onload = () => {
+    const qrCanvas = tempQr.querySelector("canvas");
+    if (!qrCanvas) {
+      tempQr.remove();
+      return;
+    }
+
+    const finalCanvas = document.createElement("canvas");
+    const size = 320;
+    finalCanvas.width = size;
+    finalCanvas.height = size;
+
+    const ctx = finalCanvas.getContext("2d");
+    ctx.clearRect(0, 0, size, size);
+    ctx.drawImage(qrCanvas, 0, 0, size, size);
+
+    const logoSize = 110;
+    const x = (size - logoSize) / 2;
+    const y = (size - logoSize) / 2;
+
+    ctx.drawImage(logo, x, y, logoSize, logoSize);
+
+    const pngUrl = finalCanvas.toDataURL("image/png");
+
+    const resultImg = document.createElement("img");
+    resultImg.src = pngUrl;
+    resultImg.alt = "QR-Code mit Logo";
+    resultImg.className = "qr-result-image";
+    resultImg.draggable = true;
+
+    const downloadLink = document.createElement("a");
+    downloadLink.href = pngUrl;
+    downloadLink.download = `${qrText}.png`;
+    downloadLink.appendChild(resultImg);
+
+    qrContainer.innerHTML = "";
+    qrContainer.appendChild(downloadLink);
+
+    tempQr.remove();
+  };
+
+  logo.onerror = () => {
+    qrContainer.innerHTML = "<p>Logo konnte nicht geladen werden.</p>";
+    tempQr.remove();
+  };
 }
 
 buildingSelect.addEventListener("change", () => {
   populateStaircases();
-  populateFloors();
-  renderQrCode();
-});
-
-staircaseSelect.addEventListener("change", () => {
   populateFloors();
   renderQrCode();
 });

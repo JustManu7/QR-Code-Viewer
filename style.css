@@ -76,3 +76,57 @@ select {
   .container { padding: 16px; }
   .panel { padding: 18px; }
 }
+
+
+.qr-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-inner {
+  width: 300px;
+  height: 300px;
+}
+
+.qr-inner img,
+.qr-inner canvas {
+  display: block;
+  width: 300px !important;
+  height: 300px !important;
+}
+
+.qr-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 84px;
+  height: 84px;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  object-fit: contain;
+  z-index: 2;
+  box-shadow: none;
+}
+
+#qrcode canvas,
+#qrcode img {
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+
+.qr-result-image {
+  display: block;
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: element;
+  cursor: grab;
+}
