@@ -234,15 +234,12 @@ function renderQrCode() {
   const ctx = finalCanvas.getContext("2d");
   ctx.clearRect(0, 0, exportSize, exportSize);
 
-  // QR-Code groß aufziehen
   ctx.drawImage(qrCanvas, 0, 0, exportSize, exportSize);
 
-  // Optional: Bildglättung für Logo aktivieren
   ctx.imageSmoothingEnabled = true;
   ctx.imageSmoothingQuality = "high";
 
-  // Logo proportional skalieren
-  const maxLogoSize = 150 * scale;
+  const maxLogoSize = 90 * scale;
   const aspectRatio = logo.width / logo.height;
 
   let drawWidth, drawHeight;
@@ -255,11 +252,9 @@ function renderQrCode() {
     drawWidth = maxLogoSize * aspectRatio;
   }
 
-  // Logo zentrieren
   const x = (exportSize - drawWidth) / 2;
   const y = (exportSize - drawHeight) / 2;
 
-  // Weißer Hintergrund unter dem Logo für bessere Lesbarkeit + saubere Kanten
   const padding = 18 * scale;
   ctx.fillStyle = "#ffffff";
   ctx.fillRect(
@@ -269,7 +264,6 @@ function renderQrCode() {
     drawHeight + padding
   );
 
-  // Logo zeichnen
   ctx.drawImage(logo, x, y, drawWidth, drawHeight);
 
   const pngUrl = finalCanvas.toDataURL("image/png");
