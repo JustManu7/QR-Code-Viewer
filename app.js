@@ -295,6 +295,10 @@ buildingSelect.addEventListener("change", () => {
   populateFloors();
   renderQrCode();
 });
+staircaseSelect.addEventListener("change", () => {
+  populateFloors();
+  renderQrCode();
+});
 
 floorSelect.addEventListener("change", renderQrCode);
 
